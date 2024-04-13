@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+    </head>
+    <body> 
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="text-center">
+                  <h3><i class="fa fa-lock fa-4x"></i></h3>
+                  <h2 class="text-center">Forgot Password?</h2>
+                  <p>You can reset your password here.</p>
+                  <div class="panel-body">
+    
+                    <form *ngIf="verified != 'true'" #resetForm="ngForm" ngNativeValidate (ngSubmit)="onVerify()">
+    
+                      <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                          <input id="email" name="email" placeholder="example@banking.com" [(ngModel)]="email" class="form-control"  type="email">
+                        </div>
+                        <p id="message" *ngIf="verified == 'false'">
+                          No match found in our records, please try again.
+                      </p>
+                     
+                      <div class="input-group">
+                        <div *ngIf="verified == 'true'" #updateForm="ngForm" ngNativeValidate (ngSubmit)="onUpdate()">
+                        <input id="new-password" name="new-password" type="password" name="pass" placeholder="New Password" [(ngModel)]="this.pass1" />
+                        <input id="confirm-password" name="confirm-password" type="password" name="pass" name="passConfirm" placeholder="Confirm Password" [(ngModel)]="this.pass2" />
+                      <input type="hidden" class="hide" name="token" id="token" value=""> 
+                    </form>
+    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div>
+</div> 
+</body>
+</html>

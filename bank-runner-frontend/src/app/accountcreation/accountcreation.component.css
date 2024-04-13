@@ -1,0 +1,38 @@
+@media (min-width: 1025px) {
+  .h-custom {
+    height: 100vh !important;
+  }
+}
+
+body {
+  background-image: url('https://i.postimg.cc/7hPKd0NB/background.jpg');
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+ margin-top: 120px;
+display: flex;
+height: 150px;
+align-items: center;
+}
+
+h1{
+font-weight: bolder;
+color:#052c92;
+}
+button:hover{
+  text-transform:uppercase ;
+  background-color: whitesmoke;
+  color:blue;
+  font-weight: bolder;
+ 
+
+}

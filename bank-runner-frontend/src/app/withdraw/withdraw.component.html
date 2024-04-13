@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Transfer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous" />
+    <style>
+       
+    </style>
+</head>
+<body class="p-3 mb-2 bg-info text-dark">
+    <div class="container align-self-center">
+        <div class="row col-md-10 col-sm-offset-1">
+            <div class="card rounded-3">
+                <div class="card-body p-4 p-md-5">
+                    <br /><br />
+                    <h1 class="text-center"><b>Request Money</b></h1>
+                    <form #addForm="ngForm" (ngSubmit)="onmake()" class="px-md-2">
+                        <div class="form-group">
+                            <div class="form-group col-sm-12 flex-column d-flex">
+                                <label class="form-control-label"><b>Recipient Account</b
+                        ></label
+                      >
+                      <select
+                        id="accounttype"
+                        [(ngModel)]="newdata1.accountnumber"
+                        name="accounttype"
+                        class="select"
+                      >
+                        <option>------------------</option>
+                        <option
+                          *ngFor="let checkingaccount of checkingaccountinfo; let i=index;"
+                        >
+                          <b>Checking Account</b
+                          >&nbsp;{{i+1}}:&nbsp;{{checkingaccount.chkAccNum}}
+                          Bal:${{checkingaccount.chkAccBal}}
+                        </option>
+                        <option
+                          *ngFor="let savings of savingsaccountinfo; let i=index;"
+                        >
+                          <b>Savings Account</b
+                          >&nbsp;{{i+1}}:&nbsp;{{savings.savAccNum}}
+                          Bal:${{savings.savAccBal}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+<!--FIRST DIV IS ON TOP-->
+                  <br>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-lg-5">
+                      <label for ="email"class="form-control-label"
+                        ><b>Recipient Email</b
+                        ></label
+                      >
+                      <input
+                      class="form-control"
+                        type="text"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        [(ngModel)]="newdata1.email"
+                        placeholder="Enter email"
+                      />
+                    </div>
+                    <div class="col-lg-5">
+                      <label class="form-control-label"
+                        ><b>Recipient Phone number</b></label
+                      >
+                      <input
+                      class="form-control"
+                        type="text"
+                        id="phone"
+                        class="form-control"
+                        name="phone"
+                        placeholder="Enter phone number"
+                      />
+                    </div>
+                    </div>
+                  </div>
+                  <!--BEGINNING OF NEW FORM-GROUP-->
+                  <div class="form-group form-outline w-75 mb-4">
+                    <div class="row">
+                      <div class="col-lg-10">
+                      <label
+                        ><b>Describe the reason</b
+                        ></label
+                      >
+                      <textarea type="textarea" class="form-control" [(ngModel)]="newdata1.description" placeholder="" id="description" name="description" rows="3"></textarea>
+                      <!--<input
+                        type="textarea"
+                        class="form-control "
+                        [(ngModel)]="newdata1.description"
+                        placeholder=""
+                        name="description"
+                        id="description"
+                        placeholder
+                      /> -->
+                    </div>
+                  </div>
+                  </div>
+                  <!--BEGINNING OF NEW FORM GROUP-->
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-lg-10">
+                      <label
+                        ><b>Enter Amount</b>
+                        </label
+                      >
+                      <input
+                        type="text"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                        class="form-control"
+                        [(ngModel)]="newdata1.amount"
+                        placeholder="0.00"
+                        name="amount"
+                        id="amount"
+                      />
+                    </div>
+                    </div>
+                  </div>
+                  <!--END OF THE PREVIOUS FORM GROUP-->
+                        <button
+                          routerLink="/myaccounts"
+                          id="button2"
+                          name="button2"
+                          type="button"
+                          class="btn btn-primary btn-lg mb-1"
+                        >
+                          <b>Go Back</b>
+                        </button>
+                        <button
+                          id="button1"
+                          name="button1"
+                          type="submit"
+                          class="btn btn-primary btn-lg mb-1"
+                        >
+                          <b>Submit</b>
+                        </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<head>
+    <title>Bank Runner</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <style>
+
+
+nav li { display:inline-block;
+margin-left:25px;
+margin-right:25px}
+
+#register-hover:hover,
+#login-hover:hover,
+#manager-portal-hover:hover,
+#forgot-password:hover {
+  background-color: blue;
+  color: white;
+  text-transform: uppercase;
+}
+
+#btn {
+  color: blue;
+  background-color: white;
+}
+
+#btn:hover {
+  background-color: blue;
+  color: white;
+  text-transform: uppercase;
+}
+
+* {text-align:center;}
+
+  </style>
+  </head>
+  
+  <nav class="navbar navbar-inverse bg-info">
+    <div class="container-fluid">
+        <div class="navbar-header ">
+           
+ 
+
+        <ul class="nav navbar-nav">
+
+  
+    <li *ngIf="!authService.isLoggedIn()"><a routerLink="login">Login</a></li>
+    <li *ngIf="authService.isManager()"><a routerLink="manager">Manager Portal</a></li>
+    <li *ngIf="!authService.isLoggedIn()"><a routerLink="register">Register</a></li>
+    <li *ngIf="!authService.isLoggedIn()"><a routerLink="forgot">Forgot Password</a></li>
+    <li *ngIf="authService.isLoggedIn()"><a routerLink="myaccounts">My Accounts</a></li>
+    <li *ngIf="authService.isLoggedIn()"><a routerLink="budget">Budget Calculator</a></li>
+    <li *ngIf="authService.isLoggedIn()"><a routerLink="myprofile">Edit Profile</a></li>
+    <li><a routerLink="loans">Apply for a Loan</a></li>
+    <li *ngIf="authService.isLoggedIn()" style="color:white; margin-top:14px; margin-right:10px;">Logged in as: {{authService.currentUser!.uname}}</li>
+    <li *ngIf="authService.isLoggedIn()"><button (click)="authService.logout()" style="color:#353535;background-color: #3b3b3b;border:none;color:white; margin-top:12px; margin-right:10px;">Logout</button></li>
+    
+    
+
+  </ul> 
+  </div>
+</div>
+</nav>
+<footer class="skin-cool" role="contentinfo">
+  <p>Copyright &copy; 2022 BankRunner Corporation. All rights reserved.</p>
+</footer>
+<router-outlet></router-outlet>
+
+
+ 

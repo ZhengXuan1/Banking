@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+   
+    </head>
+    <body>
+            <div class="container">
+                <div class="row">
+                    <div class="row">
+                        <div class="col-md-4 col-md-offset-4">
+                            <div class="panel panel">
+                                <div class="panel-body">
+                                    <div class="text-center">
+                                        <h3><i class="fa fa-lock fa-5x"></i></h3>
+                                        <h1 style="font-size: 36px">Reset Password</h1>
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <div>
+                                                    <form *ngIf="verified != 'true'" #resetForm="ngForm" ngNativeValidate (ngSubmit)="onVerify()">
+                                                        <input class="form-control input-lg" id="email-id" type="email" name="email" placeholder="example@banking.com" [(ngModel)]="email" />
+                                                        <input class="form-control btn btn-lg btn-primary btn-block" type="submit" value="Verify" id="submit-btn" /><br>
+                                                        <p id="message" *ngIf="verified == 'false'">
+                                                            No match found in our records, please try again.
+                                                        </p>
+                                                       
+                                                          
+                                                       
+                                                    </form>
+                                                </div>
+                                                    <br><h3 class="text-center">Enter new password</h3>
+                                                    <div>
+                                                        
+                                                        <form *ngIf="verified == 'true'" #updateForm="ngForm" ngNativeValidate (ngSubmit)="onUpdate()">
+                                                            <input class="form-control input-lg" id="new-pass-id" type="password" name="pass" placeholder="New Password" [(ngModel)]="this.pass1" /><br /><br /><br />
+                                                            <input class="form-control input-lg" id="comfirm-pass-id" type="password" name="passConfirm" placeholder="Confirm Password" [(ngModel)]="this.pass2" /><br /><br />
+                                                         
+                                                           
+                                                                <input class="btn btn-lg btn-primary btn-block" type="submit" value="Update" id="update-btn" />
+                                                           
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </body>
+
+</html>
+   

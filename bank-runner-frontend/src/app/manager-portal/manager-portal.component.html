@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Loan Application</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+</head>
+
+
+
+
+<body class="th-3 mb-2 bg-white text-dark">
+
+
+    <div class="container align-self-center" *ngIf="authService.isManager()">
+        <h4>
+            <th *ngIf="authService.isManager()">Logged in as: {{authService.currentUser!.fname + " " +
+                authService.currentUser!.lname}}</th>
+        </h4>
+        <div class="row col-lg-12 ">
+
+        <form *ngIf="this.showDecisionOptions=='yes'" ngNativeValidate #updateStatus="ngForm"
+                (ngSubmit)="onStatusUpdate()">
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                            <input class="form-control" type="number" placeholder="app#" aria-label="app#" name="LoanId"
+                                [(ngModel)]="this.decision.appId">
+                        </div>
+
+
+                            <div class="form-check col-sm-3">
+                                <input class="form-check-input" type="radio" name="decision" id="decision" value="APPROVED" [(ngModel)]="this.decision.status">
+                                <label class="form-check-label text-white bg-dark " for="decision">
+                                    Approve
+                                </label>
+                              </div>
+                              <div class="form-check col-sm-3">
+                                <input class="form-check-input" type="radio" name="decision" id="decision" value="DENIED" [(ngModel)]="this.decision.status">
+                                <label class="form-check-label text-white bg-dark" for="DENIED">
+                                    Deny
+                                </label>
+                              </div>
+                              <div class="form-check col-sm-3">
+                                <input class="form-check-input" type="radio" name="decision" id="decision" value="PENDING" [(ngModel)]="this.decision.status">
+                                <label class="form-check-label text-white bg-dark" for="PENDING" >
+                                    Revert to Pending
+                                </label>
+                              </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group" >
+                    <label for="Reason" class="form-label">Reason</label>
+
+                    <textarea class="form-control" aria-label="Reason" rows="4"  cols="4"></textarea>
+
+                        <input class="btn btn-primary" type="submit" value="Submit">
+
+                </div>
+
+
+
+            </form>
+        </div>
+
+    </div>
+
+
+           <div class="form-group" >
+                       <button class="btn btn-primary" *ngIf="submissionMade=='yes'" (click)="again()">Continue</button><br>
+                       <button id="btn" class="btn btn-primary" *ngIf="submissionMade!='yes'" (click)="loadLoans()">View Loans</button>
+           </div>
+
+
+
+        <div *ngFor="let loan of loanList">
+          <div class="container-lg ">
+
+            <div class="col-md-12">
+
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th style="text-align:center; color:white; background-color:#337ab7; ">Loan ID:</th>
+                    <th style="text-align:center; color:white; background-color:#337ab7; ">Name: </th>
+                    <th style="text-align:center; color:white; background-color:#337ab7;">Email: </th>
+                    <th style="text-align:center; color:white; background-color:#337ab7; ">Loan Amount Requested: </th>
+                    <th style="text-align:center; color:white; background-color:#337ab7; ">Reason for Loan: </th>
+                    <th style="text-align:center; color:white; background-color:#337ab7; ">Annual Salary: </th>
+                    <th style="text-align:center; color:white; background-color:#337ab7; ">Status: </th>
+                    <th style="text-align:center; color:white; background-color:#337ab7; ">Reason:</th>
+                  </tr>
+                </thead>
+
+        <tr>
+                    <td style="text-align:center; font-weight:bolder ; background-color: white">{{loan.app_id}} </td>
+                    <td style="text-align:center; font-weight:bolder ; background-color: white">{{loan.fname + " " + loan.lname}}</td>
+                    <td style="text-align:center; font-weight:bolder ; background-color: white">{{loan.email}}</td>
+                    <td style="text-align:center; font-weight:bolder ; background-color: white"> {{loan.loanAmount}}</td>
+                    <td style="text-align:center; font-weight:bolder ; background-color: white"> {{loan.loanPurpose}}</td>
+                    <td style="text-align:center; font-weight:bolder ; background-color: white"> {{loan.salary}}</td>
+                    <td style="text-align:center; font-weight:bolder ; background-color: white"> {{loan.status}}</td>
+                    <td style="text-align:center; font-weight:bolder ; background-color: white"> {{loan.description}} </td>
+        </tr>
+                          <thead>
+                          <tr>
+                              <th style="text-align:center; color:white; background-color:#337ab7;">SS #: </th>
+                              <th style="text-align:center; color:white; background-color:#337ab7;">Date of Birth: </th>
+                              <th style="text-align:center; color:white; background-color:#337ab7;">Marital Status: </th>
+                              <th style="text-align:center; color:white; background-color:#337ab7;">Address: </th>
+                              <th style="text-align:center; color:white; background-color:#337ab7;">City: </th>
+                              <th style="text-align:center; color:white; background-color:#337ab7;">State: </th>
+                              <th style="text-align:center; color:white; background-color:#337ab7;">Zip: </th>
+                              <th style="text-align:center; color:white; background-color:#337ab7;">Phone: </th>
+                          </thead>
+
+
+
+                            <tr>
+                              <td style="text-align:center; font-weight:bolder ; background-color: white">  {{loan.ssNum}} </td>
+                              <td style="text-align:center; font-weight:bolder ; background-color: white">{{loan.dob}}</td>
+                              <td style="text-align:center; font-weight:bolder ; background-color: white"> {{loan.maritalStatus}}</td>
+                              <td style="text-align:center; font-weight:bolder ; background-color: white"> {{loan.street}}</td>
+                              <td style="text-align:center; font-weight:bolder ; background-color: white"> {{loan.city}} </td>
+                              <td style="text-align:center; font-weight:bolder ; background-color: white"> {{loan.state}} </td>
+                              <td style="text-align:center; font-weight:bolder ; background-color: white"> {{loan.zip}} </td>
+                              <td style="text-align:center; font-weight:bolder ; background-color: white"> {{loan.phone}} </td>
+                            </tr>
+
+
+
+              </table>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+</body>
+<router-outlet></router-outlet>
+
+</html>

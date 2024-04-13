@@ -1,0 +1,48 @@
+nav li { display:inline-block;
+margin-left:25px;
+margin-right:25px}
+
+#register-hover:hover,
+#login-hover:hover,
+#manager-portal-hover:hover,
+#forgot-password:hover {
+    background-color: blue;
+    color: white;
+    text-transform: uppercase;
+}
+
+
+
+#btn {
+    color: red;
+    background-color: white;
+}
+
+#btn:hover {
+    background-color: red;
+    color: blue;
+    text-transform: uppercase;
+}
+.container {
+    position: absolute;
+    margin: 20px;
+    width: auto;
+  }
+  
+  
+
+  footer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin-top: 40px;
+    padding-top: 10px;
+    background-color: #4682B4;
+    color: white;
+    text-align: center;
+}
+
+
+* {text-align:center;}
+

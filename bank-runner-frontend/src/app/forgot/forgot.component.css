@@ -1,0 +1,23 @@
+body {
+    background-image: url('src\assets\images\Password-Reset-1-768x768-1.png');
+    z-index: -1;
+    height: 125%;
+    width: 100%;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+  }
+
+.container {
+ 
+ margin-top: 60px;
+ margin-right:360px;
+ opacity: .75;
+
+height: 150px;
+align-items: center;
+}
+
+
+

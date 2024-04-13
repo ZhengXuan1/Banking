@@ -1,0 +1,58 @@
+body {
+    background-image: url("src\assets\images\loginPage-bg-pic.png");
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+#section-id {
+box-shadow: 8px 8px 8px 2px rgba(0, 0, 0, 0.1);
+}
+
+#submit-button {
+    background-color: #357ebd;
+   color : white;
+    font-weight: 600;
+    border-radius: 15px;
+}
+
+#submit-button:hover {
+    background-color: blue;
+    color: white;
+}
+
+#label-login {
+   
+    font-size: 35px;
+}
+
+#label-enter-credentials {
+  
+    font-size: 15px;
+}
+
+#label-id {
+   
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+
+#label-uname {
+    
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.container{
+
+ margin-top: 100px;
+opacity: .85;
+height: 150px;
+align-items: center;
+  }

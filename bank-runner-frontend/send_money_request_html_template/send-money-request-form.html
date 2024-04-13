@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="css/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.webp'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+            <!-- Mask & flexbox options-->
+            <div class="mask rgba-gradient align-items-center">
+            <div class="container-fluid px-1 py-5 mx-auto">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                    <div class="card">
+                        <h5 class="text-center mt-4">Enter Your Information Below to Send Money To Another Account</h5>
+                        <form class="form-card" onsubmit="event.preventDefault()">
+                            <!-- Account number dropdown -->
+                            <div class="row text-left justify-content-sm-between p-4 mx-2">
+                                <div>
+                                    <label>Select Account: </label>
+                                    <select (change)="SelectItem($event.target.value)" class="select">
+                                    <option value="0">--All--</option>
+                                    <option *ngFor="let item of items" value="{{item.Id.Value}}">
+                                        {{item.Name}}
+                                    </option>
+                                    </select>
+                                </div>
+                            <!-- for .ts file - from [https://stackoverflow.com/questions/34736161/create-a-dropdown-component]
+                                SelectItem(filterVal: any)
+                                {
+                                    var id=filterVal;
+                                    //code
+                                }
+                            -->
+                            <!-- Account Number dropdown -->
+                            <!-- Amount dropdown -->
+                                <div>
+                                    <label>Choose Amount: </label>
+                                    <select (change)="SelectItem($event.target.value)" class="select">
+                                    <option value="0">--All--</option>
+                                    <option *ngFor="let item of items" value="{{item.Id.Value}}">
+                                        {{item.Name}}
+                                    </option>
+                                    </select>
+                                </div>
+                            <!-- for .ts file - from [https://stackoverflow.com/questions/34736161/create-a-dropdown-component]
+                                SelectItem(filterVal: any)
+                                {
+                                    var id=filterVal;
+                                    //code
+                                }
+                            -->
+                            </div>
+                            <!-- Amount dropdown -->
+                            <div class="row justify-content-between text-left pt-4 ml-2 mr-2">
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">First name<span class="text-danger"> *</span></label> <input type="text" id="fname" name="fname" placeholder="Enter your first name" onblur="validate(1)"> </div>
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label> <input type="text" id="lname" name="lname" placeholder="Enter your last name" onblur="validate(2)"> </div>
+                            </div>
+                            <div class="row justify-content-between text-left pt-4 ml-2 mr-2">
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Email<span class="text-danger"> *</span></label> <input type="text" id="email" name="email" placeholder="" onblur="validate(3)"> </div>
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Phone number<span class="text-danger"> *</span></label> <input type="text" id="mob" name="mob" placeholder="" onblur="validate(4)"> </div>
+                            </div>
+                            <div class="row justify-content-end pt-4 ml-2 mr-2">
+                                <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Submit Request</button> </div>
+                            </div>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

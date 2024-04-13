@@ -1,0 +1,21 @@
+body {
+    background-image: url("src\assets\images\managerPortal-background-pic.jpg");
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+
+.container-lg{
+    position:cover;
+    background-color: aliceblue;
+}
+label,h4{
+    color:white;
+}
+#btn{
+    margin-left:15px;
+}

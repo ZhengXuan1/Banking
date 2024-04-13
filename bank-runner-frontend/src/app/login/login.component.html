@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        
+    
+    </style>
+</head>
+
+<body>
+    <section class="bg-white opacity:.85">
+        <div class="container">
+            <div class="row opacity:.85">
+                <div class="row opacity:.85">
+                    <div class="col-md-4 col-md-offset-4 opacity:.85">
+                        <div class="panel panel opacity:.85">
+                            <div class="panel-body opacity:.85">
+                                <div class="text-center opacity:.85">
+                                    <h3><i class="fa fa-lock fa-5x opacity:.85"></i></h3>
+                                    <h2 class="fw-bold mb-2 text-uppercase opacity:.85" id="label-login">
+                                        Personal Banking</h2>
+                                    <div class="panel-body opacity:.85">
+                                        <div class="form-group opacity:.85">
+                                            <p class="text-white-70 mb-5" id="label-enter-credentials">
+                                                My Accounts</p>
+                                            <div class="input-group">
+                                                <form  #loginForm="ngForm" ngNativeValidate (ngSubmit)="onLogin()">
+                                      
+                                                    <input required type="text" id="uname" name="uname" pattern="[0-9A-Za-z\s.-]+" class="form-control form-control-lg" [(ngModel)]="loginDetails.uname" />
+                                                    <label class="form-label" for="uname" id="label-uname">Username</label>
+                                                
+                
+                                  <div  class="form-outline form-white mb-4">
+                                    <input required type="password" id="password" name="pass" class="form-control form-control-lg" [(ngModel)]="loginDetails.pass">
+                                    <label class="form-label" for="pass" id="label-id"
+                                      >Password</label>
+                                  </div>
+                
+                                  <input id="submit-button" class="btn btn-outline-light btn-lg px-5" type="submit" value="Login">
+                                  </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                                
+                            
+                        </div>  
+                    </div>
+
+                  
+                  
+                  </div>
+                   
+                </div>
+            </div>
+      
+    </section>
+</body>
+
+</html>

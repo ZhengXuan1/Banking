@@ -1,0 +1,26 @@
+body {
+    background-image: url('src\assets\images\send-and-transfer-bg.jpg');
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+  }
+  .top-buffer{
+    margin-top:100px;
+  }
+  label{
+    color:whitesmoke;
+    font-size: medium;
+  }
+  h1{
+    color:snow;
+  }
+
+  h3{
+    color:snow;
+text-align: center;
+margin-right: 15%;
+  }

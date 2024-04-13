@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Budget Calculator</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css"
+    integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+</head>
+
+
+
+<body class="p-3 mt-2 mb-2 bg-info text-dark">
+  <div class="container align-self-center">
+    <div class="row col-md-10 col-sm-offset-1">
+      <div class="panel panel-primary">
+
+        <div class="panel-heading text-center">
+          <h1>Budget Calculator</h1>
+        </div>
+
+
+        <div class="panel panel-body">
+          <form>
+            <div class="col-lg-7">
+              <div class="form-group">
+                <div>
+                  <label for="income">Monthly Income: </label>
+                  <input [(ngModel)]="income" class="form-control" name="income" id="income" min="0" type="number">
+                </div>
+                <div>
+                  <label for="housing">Housing:</label>
+                  <input [(ngModel)]="housing" class="form-control" name="housing" id="housing" min="0" type="text"
+                    value="0">
+                </div>
+                <div>
+                  <label for="food-field">Food/Groceries:</label>
+                  <input [(ngModel)]="food" class="form-control" name="food" id="food-field" min="0" type="number">
+                </div>
+                <div>
+                  <label for="utilities">Utilities:</label>
+                  <input [(ngModel)]="utilities" class="form-control" name="utilities" id="utilities" min="0"
+                    type="number">
+                </div>
+                <div>
+                </div>
+                <div>
+                  <label for="medicalinsurance">Medical Insurance:</label>
+                  <input [(ngModel)]="medicalinsurance" class="form-control" name="medicalinsurance"
+                    id="medicalinsurance" min="0" type="number">
+                </div>
+                <div>
+                  <label for="clothing">Clothing </label>
+                  <input [(ngModel)]="clothing" class="form-control" name="clothing" id="clothing" min="0"
+                    type="number">
+                </div>
+                <div>
+                  <label for="saving">Saving </label>
+                  <input [(ngModel)]="saving" class="form-control" name="saving" id="saving" min="0" type="number">
+                </div>
+                <div>
+                  <label for="studentloan">Student Loan </label>
+                  <input [(ngModel)]="studentloan" class="form-control" name="studentloan" id="studentloan" min="0"
+                    type="number">
+                </div>
+                <div>
+                  <label for="entertainment">Entertaiment </label>
+                  <input [(ngModel)]="entertainment" class="form-control" name="entertainment" id="entertainment"
+                    min="0" type="number">
+                </div>
+                <div>
+                  <label for="credit">Credit</label>
+                  <input [(ngModel)]="credit" class="form-control" name="credit" id="credit" min="0" type="number">
+                </div>
+                <div>
+                  <label for="autoinsurance">Auto Insurance </label>
+                  <input [(ngModel)]="autoinsurance" class="form-control" name="autoinsurance" id="autoinsurance"
+                    min="0" type="number">
+                </div>
+                <div>
+                  <label for="automaintainance">Auto Maintainance </label>
+                  <input [(ngModel)]="automaintainance" class="form-control" name="automaintainance"
+                    id="automaintainance" min="0" type="number">
+                </div>
+                <div>
+                  <label for="fuel">Fuel</label>
+                  <input [(ngModel)]="fuel" class="form-control" name="fuel" id="fuel" min="0" type="number">
+                </div>
+                <div>
+                  <label for="parking">Parking/Tolls </label>
+                  <input [(ngModel)]="parking" class="form-control" name="parking" id="parking" min="0" type="number">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="form-group">
+                <div id="monthly-expense-group">
+                  <div class="input-group">
+                    <input type="number" class="form-control" placeholder="Monthly Expense: {{expense}}"
+                      name="monthly-expense" readonly>
+                    <div class="input-group-addon">$</div>
+                  </div>
+                  <button (click)="calculateExpense()" class="form-control btn btn-primary" name="monthly-expense"
+                    placeholder="monthexpense" id="monthexpense">Calculate</button>
+                </div><br>
+
+                <div id="monthly-budget-group">
+                  <div class="input-group">
+                    <input type="number" class="form-control" placeholder="Monthly Budget: {{budget}} "
+                      name="monthly-budget" id="monthly-budget" readonly>
+                    <div class="input-group-addon">$</div>
+                  </div>
+                  <button (click)="calculateBudget()" class="form-control btn btn-primary" name="monthly-budget"
+                    placeholder="monthly-budget" id="monthly-budget">Calculate</button>
+                </div><br>
+
+                <div id="quarterly-budget-group">
+                  <div class="input-group">
+                    <input type="number" class="form-control" placeholder="Quarter Budget: {{quarterbudget}}"
+                      name="quarterly-budget" readonly>
+                    <div class="input-group-addon">$</div>
+                  </div>
+                  <button (click)="calculatequarterBudget()" class="form-control btn btn-primary" name="quarterbudget"
+                    placeholder="Quarter Budget " id="quarterbudget">Calculate</button>
+                </div><br>
+
+                <div id="annual-budget-group">
+                  <div class="input-group">
+                    <input type="number" class="form-control" placeholder="Annual Budget: {{annualbudget}}"
+                      name="monthly-expense" readonly>
+                    <div class="input-group-addon">$</div>
+                  </div>
+
+                  <button (click)="calculateannualBudget()" class="form-control btn btn-primary" name="annualbudget"
+                    placeholder="Annual Budget" id="annualbudget">Calculate</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

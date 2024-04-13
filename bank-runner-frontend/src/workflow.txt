@@ -1,0 +1,8 @@
+#Remove required field from mid initial
+
+#updating password needs to entries (shoudln t be able to press verify unless both fields have values)
+
+#logging out crashes the app
+
+#will probably need a token and eventually add fucntiunality by adding a reset password column
+and a token
