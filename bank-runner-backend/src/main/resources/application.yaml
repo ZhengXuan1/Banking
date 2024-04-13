@@ -7,9 +7,9 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQL10Dialect
   datasource:
-    url: jdbc:postgresql://bank-runner.cku8nlzbndmt.us-west-1.rds.amazonaws.com/bankrunner
-    username: bankrunner
-    password: moremoney
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: Karlshi45.
     driver-class-name: org.postgresql.Driver
 server:
   port: 8888
