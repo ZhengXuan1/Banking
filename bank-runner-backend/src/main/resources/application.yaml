@@ -39,4 +39,3 @@ spring:
         - prod
 cors:
   allowed-origins:
-    - http://revature-bank-runner.s3-website-us-east-1.amazonaws.com
